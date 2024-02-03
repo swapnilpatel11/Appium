@@ -3,11 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="codewithswapnil.AppiumBasics">
+      <class name="codewithswapnil.Gestures">
         <methods>
-          <include name="AppiumTest"/>
+          <include name="ConfigureAppium"/>
+          <include name="dragAndDropDemoTest"/>
+          <include name="swipeDemoTest"/>
+          <include name="tearDown"/>
+          <include name="longPressDemoTest"/>
+          <include name="scrollDemoTest"/>
         </methods>
-      </class> <!-- codewithswapnil.AppiumBasics -->
+      </class> <!-- codewithswapnil.Gestures -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
