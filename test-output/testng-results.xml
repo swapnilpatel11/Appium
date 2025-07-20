@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-02T21:13:04 EST" name="Default suite" finished-at="2024-02-02T21:13:24 EST" duration-ms="20159">
+  <suite started-at="2024-02-19T21:21:03 EST" name="Default suite" finished-at="2024-02-19T21:21:46 EST" duration-ms="43140">
     <groups>
     </groups>
-    <test started-at="2024-02-02T21:13:04 EST" name="Default test" finished-at="2024-02-02T21:13:24 EST" duration-ms="20159">
-      <class name="codewithswapnil.Miscellaneous">
-        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:codewithswapnil.Miscellaneous@3427b02d]" started-at="2024-02-02T21:13:04 EST" name="ConfigureAppium" finished-at="2024-02-02T21:13:12 EST" duration-ms="7948" status="PASS">
+    <test started-at="2024-02-19T21:21:03 EST" name="Default test" finished-at="2024-02-19T21:21:46 EST" duration-ms="43140">
+      <class name="codewithswapnil.ECommerce_tc_1">
+        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:codewithswapnil.ECommerce_tc_1@57a3af25]" started-at="2024-02-19T21:21:03 EST" name="ConfigureAppium" finished-at="2024-02-19T21:21:30 EST" duration-ms="26913" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ConfigureAppium -->
-        <test-method signature="orientationDemo()[pri:0, instance:codewithswapnil.Miscellaneous@3427b02d]" started-at="2024-02-02T21:13:12 EST" name="orientationDemo" finished-at="2024-02-02T21:13:24 EST" duration-ms="11481" status="PASS">
+        <test-method signature="FillForm()[pri:0, instance:codewithswapnil.ECommerce_tc_1@57a3af25]" started-at="2024-02-19T21:21:30 EST" name="FillForm" finished-at="2024-02-19T21:21:45 EST" duration-ms="15251" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- orientationDemo -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:codewithswapnil.Miscellaneous@3427b02d]" started-at="2024-02-02T21:13:24 EST" name="tearDown" finished-at="2024-02-02T21:13:24 EST" duration-ms="695" status="PASS">
+        </test-method> <!-- FillForm -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:codewithswapnil.ECommerce_tc_1@57a3af25]" started-at="2024-02-19T21:21:45 EST" name="tearDown" finished-at="2024-02-19T21:21:46 EST" duration-ms="932" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- codewithswapnil.Miscellaneous -->
+      </class> <!-- codewithswapnil.ECommerce_tc_1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

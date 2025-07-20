@@ -19,6 +19,7 @@ import org.testng.annotations.BeforeMethod;
 
 import com.google.common.collect.ImmutableMap;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -28,8 +29,8 @@ public class BaseTest {
 	public AndroidDriver driver;
 	public AppiumDriverLocalService service;
 
-	@BeforeMethod
-	// @BeforeClass
+//	@BeforeMethod
+	@BeforeClass
 	public void ConfigureAppium() throws MalformedURLException, IOException {
 		// AndroidDriver class for automate Android apps
 		// for IOS apps IOSDriver class
@@ -58,7 +59,8 @@ public class BaseTest {
 		// which device, which version,which application for environment
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setDeviceName("SwapnilPhone");
-		options.setApp("C:\\Users\\Swapn\\eclipse-workspace\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+	//	options.setApp("C:\\Users\\Swapn\\eclipse-workspace\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+		options.setApp("C:\\Users\\Swapn\\eclipse-workspace\\Appium\\src\\test\\java\\resources\\General-Store.apk");
 
 		// two arguments in AndroidDriver first argument= "url of appium server" and
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
@@ -70,39 +72,37 @@ public class BaseTest {
 		((JavascriptExecutor) driver).executeScript("mobile: longClickGesture",
 				ImmutableMap.of("elementId", ((RemoteWebElement) ele).getId(), "duration", 2000));
 	}
-	
+
 	// Custom code for scroll till end of page
 	public void scrollToEndAction() {
 		boolean canScrollMore;
 		do {
-		 canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap.of(
-		    "left", 100, "top", 100, "width", 200, "height", 200,
-		    "direction", "down",
-		    "percent", 3.0
-		));
-		} while(canScrollMore);
+			canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap
+					.of("left", 100, "top", 100, "width", 200, "height", 200, "direction", "down", "percent", 3.0));
+		} while (canScrollMore);
 	}
 	
+	// Scroll to Text
+		public void scrollToText(String text) {
+			driver.findElement(
+					AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+text+"\"));"));
+		}
+
 	// Swipe if we have element to swipe
 	public void swipeAction(WebElement ele, String direction, double percentage) {
-		((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
-			    "elementId",((RemoteWebElement)ele).getId(),
-			    "direction", direction,
-			    "percent", percentage
-			));
-	}
-	
-	// Drag and Drop Method 
-	public void dragAndDropAction(WebElement source, int x, int y) {
-		((JavascriptExecutor) driver).executeScript("mobile: dragGesture", ImmutableMap.of(
-			    "elementId", ((RemoteWebElement) source).getId(),
-			    "endX", x,
-			    "endY", y
-			));
+		((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of("elementId",
+				((RemoteWebElement) ele).getId(), "direction", direction, "percent", percentage));
 	}
 
-	@AfterMethod
-	// @AfterClass
+	// Drag and Drop Method
+	public void dragAndDropAction(WebElement source, int x, int y) {
+		((JavascriptExecutor) driver).executeScript("mobile: dragGesture",
+				ImmutableMap.of("elementId", ((RemoteWebElement) source).getId(), "endX", x, "endY", y));
+	}
+	
+
+	// @AfterMethod
+	@AfterClass
 	public void tearDown() {
 		driver.quit();
 		service.stop(); // stop service
